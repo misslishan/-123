@@ -5,9 +5,10 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 	<title>无标题文档</title>
 	<style>
-		.search-box {
+		#search-box {
 			position: fixed;
 			top: 1rem;
 			right: 1rem;
@@ -21,9 +22,9 @@
 		.search-mark {
 			background: yellow;
 		}
-		#textvalue {
-			margin-top: 4rem;
-		}
+		/* #text-value {
+			margin-top: 5rem;
+		} */
 	</style>
 </head>
 
@@ -272,31 +273,50 @@ C：没有违法所得或者违法所得不足五万元的，单处或者并处�
 	</div>
 
 	<script>
+		var searchBox = document.getElementById('search-box');
 		var searchResults = null;  // 搜索结果，数组
 		var resultNum = 0;  // 锚点定位
 		var resultLength = 0;  // 搜索结果总数
 		var tagResultNum = document.getElementById('result-num');
 		var tagResultLength = document.getElementById('result-length');
-		var contentBackup = document.getElementById('textvalue').innerHTML;
+		var tagPreOne = document.getElementById('pre-one');
+		var tagNextOne = document.getElementById('next-one');
+		var contentBackup = document.getElementById('text-value').innerHTML;
+		var msg = document.getElementById('msg');
 
 		location.hash = '';  // 更新锚点
+		msg.innerText = '';
+		// 调整显示位置
+		var textStyle = getComputedStyle(searchBox);
+		document.getElementById('text-value').style.marginTop = Number(textStyle.height.slice(0, -2)) + 
+																Number(textStyle.padding.slice(0, -2)) * 2 +
+																Number(textStyle.top.slice(0, -2)) + 
+																10 + 'px';
 		// 搜索函数
 		function search() {
 			// 初始化搜索
-			document.getElementById('textvalue').innerHTML = contentBackup;
-			var searchtext = document.getElementById("searchvalue").value;
-			var textvalue = document.getElementById("textvalue").innerHTML;
+			document.getElementById('text-value').innerHTML = contentBackup;
+			var searchText = document.getElementById("search-value").value;
+			var textValue = document.getElementById("text-value").innerHTML;
 			resultNum = 0;
 			resultLength = 0;
+			tagResultNum.innerHTML = resultNum,
+			tagResultLength.innerHTML = resultLength;
+			msg.innerText = '';
 			
 			// 输入字符过滤，转义
-			searchtext = searchtext.replace(/[\~\`\!\@\#\$\%\^\&\*\(\)\_\-\=\+\[\]\{\}\|\\\;\:\'\"\,\<\.\>\/\?]/gm, '');
-			if (searchtext.length == 0) {
+			searchText = searchText.replace(/[\~\`\!\@\#\$\%\^\&\*\(\)\_\-\=\+\[\]\{\}\|\\\;\:\'\"\,\<\.\>\/\?]/gm, '');
+			if (searchText.length == 0) {
+				msg.innerText = '请输入有效值！';
+				return;
+			}
+			if (!textValue.match(searchText)) {
+				msg.innerText = '未找到结果！';
 				return;
 			}
 
-			document.getElementById('textvalue').innerHTML = textvalue.replace(new RegExp(searchtext, 'gm'),
-				'<span class="search-result">' + searchtext + '</span>');
+			document.getElementById('text-value').innerHTML = textValue.replace(new RegExp(searchText, 'gm'),
+				'<span class="search-result">' + searchText + '</span>');
 			searchResults = document.getElementsByClassName('search-result');
 
 			resultLength = searchResults.length;
@@ -304,7 +324,6 @@ C：没有违法所得或者违法所得不足五万元的，单处或者并处�
 				searchResults[i].id = 'search-result-' + i;
 			}
 			locateResult(resultNum);
-			// clearResult(searchResults);
 		}
 		// 定位结果锚点
 		function locateResult(n) {
@@ -324,17 +343,14 @@ C：没有违法所得或者违法所得不足五万元的，单处或者并处�
 		// 上一个结果
 		function preOne() {
 			locateResult(resultNum > 0 ? --resultNum : resultNum);
+			if (resultNum === 0) tagPreOne.disabled = true;
+			if (resultNum < resultLength - 1) tagNextOne.disabled = false;
 		}
 		// 下一个结果
 		function nextOne() {
 			locateResult(resultNum < resultLength - 1 ? ++resultNum : resultNum);
-		}
-		// 清空搜索记录
-		function clearResult(_searchResults) {
-			_searchResults = document.getElementsByClassName('search-result');
-			for (var i = 0; i < searchResults.length; i++) {
-				_searchResults[i].classList.remove('search-result');
-			}
+			if (resultNum === resultLength - 1) tagNextOne.disabled = true;
+			if (resultNum > 0) tagPreOne.disabled = false;
 		}
 	</script>
 
