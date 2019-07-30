@@ -29,16 +29,17 @@
 </head>
 
 <body>
-	<div class="search-box">
-		<input type="text" id="searchvalue" autofocus />
+	<div id="search-box">
+		<input type="text" id="search-value" placeholder="输入关键词" autofocus />
 		<input type="button" onclick="search()" value="搜索" />
-		<input type="button" value="上一个" onclick="preOne()" />
-		<input type="button" value="下一个" onclick="nextOne()" />
+		<input type="button" id="pre-one" value="上一个" onclick="preOne()" />
+		<input type="button" id="next-one" value="下一个" onclick="nextOne()" />
 		第
 		<span id="result-num"></span>
 		/
 		<span id="result-length"></span>
 		个
+		<p id="msg"></p>
 	</div>
 	<div cols="100" rows="10" id="textvalue">A类题库
 		
