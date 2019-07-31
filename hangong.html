@@ -1,0 +1,191 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>焊工题库</title>
+	<style>
+		.search-box {
+			position: fixed;
+			top: 1rem;
+			right: 1rem;
+			padding: .5rem;
+			background: #ddd;
+			opacity: .8;
+		}
+		.search-result {
+			color: red;
+		}
+		.search-mark {
+			background: yellow;
+		}
+		#textvalue {
+			margin-top: 4rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="search-box">
+		<input type="text" id="searchvalue" placeholder="输入关键词" autofocus />
+		<input type="button" onclick="search()" value="搜索" />
+		<input type="button" value="上一个" onclick="preOne()" />
+		<input type="button" value="下一个" onclick="nextOne()" />
+		第
+		<span id="result-num"></span>
+		/
+		<span id="result-length"></span>
+		个
+	</div>
+	<div cols="100" rows="10" id="textvalue">
+		
+<p id="10000">焊工题库</p>
+<p id="1">1、焊缝表面两焊趾之间的距离称之为焊缝宽度。(对)</p>
+<p id="2">2、乙炔是一种高热值的易燃易爆的气体，相对密度为0.19。(对)</p>
+<p id="3">3、焊工在距地面2.5米以上的高度进行焊接作业时称之为登高作业。(×)</p>
+<p id="4">4、焊接用乙炔瓶应放置在距离明火10m以外的地方，可以倒放。(×)</p>
+<p id="5">5、焊工登高作业要设监护人。(对)</p>
+<p id="6">6、高频焊时需施加压力。(对)</p>
+<p id="7">7、电弧焊机的工作条件应在海拔不超过1000米的大气压下工作。(对)</p>
+<p id="8">8、电焊机二次端与焊件不应同时存在接地或接零装置。（×）</p>
+<p id="9">9、焊接电流是影响焊缝宽度的主要因素。(×)</p>
+<p id="10">10、任何单位和个人不得将产生职业病危害的作业转移给不具备职业病防护条件的单位和个人。（对)</p>
+<p id="11">11、气焊与气割的主要危险是火灾和爆炸。(对)</p>
+<p id="12">12、如果最大焊接电流是300A是选择焊接电缆截面积是25平方毫米。(×)</p>
+<p id="13">13、更换焊条时可以不戴手套，用手直接操作。(×)</p>
+<p id="14">14、在焊接作业区，严禁直视电弧。(对)</p>
+<p id="15">15、钢和铁是黑色金属的两大类，都是以铁和碳为主要元素的合金。(对)</p>
+<p id="16">16、立焊容易掌握焊透情况，但是容易咬边，焊缝表面不平整。(对)</p>
+<p id="17">17、电击指电流通过人体，造成的内伤。(对)</p>
+<p id="18">18、人的生命是最宝贵的，人的生命权是人一切权利的基础。（对）</p>
+<p id="19">19、焊缝成形系统就是焊缝宽度与焊缝计算厚度之比。(对)</p>
+<p id="20">20、电流通过人体从手到脚的电流途径最危险。(对)</p>
+<p id="21">21、闪光对焊时操作人员应穿防护服戴防护镜防止灼伤。(对)</p>
+<p id="22">22、焊机变压器的二次线圈与焊件相连的一端必须接零(或接地)</p>。(对)</p>
+<p id="23">23、二氧化碳气体加热器的电压不得高于36V。(对)</p>
+<p id="24">24、在焊接接头横截面上，母材或前道焊缝熔化的浓度叫溶深。(对)</p>
+<p id="25">25、电渣焊不产生飞溅。(对)</p>
+<p id="26">26、钢的退火可降低硬度，使材料便于切削加工能消除内应力。(对)</p>
+<p id="27">27、二氧化碳气瓶的剩余压力要求不得低于1MPa。(对)</p>
+<p id="28">28、短路引弧就是使电极直接与工件接触引弧。(对)</p>
+<p id="29">29、手弧焊的焊条可适用于大多数工业用碳钢，不锈钢，铸铁等。(对)</p>
+<p id="30">30、等离子弧切割时，不要戴耳塞。(×)</p>
+<p id="31">2、电渣焊缝的金属组织晶粒粗大，须进行回火处理。(×)</p>
+<p id="32">4、更换焊条时可以不戴手套，用手直接操作。(×)</p>
+<p id="33">6、硅整流电弧焊机是直流弧焊机。(对)</p>
+<p id="33">7、安全第一是要求我们在工作中始终把安全放在第一位。(对)</p>
+<p id="34">8、冬季使用气瓶时，若有瓶阀和减压器冻结，应用热水或蒸气解冻。(对)</p>
+<p id="35">9、电渣焊时，滑块内应通冷却水。(对)</p>
+<p id="36">10、焊工不得赤手更换焊条。(对)</p>
+<p id="37">11、酸性焊条中含有的氟化物比碱性多。(×)</p>
+<p id="38">15、焊接电缆外皮必须完整，其绝缘电阻不得小于1MΩ。(对)</p>
+<p id="39">17、埋弧焊中形成的熔渣只起保护作用，不会影响焊缝的化学成分和性能。(对)</p>
+<p id="40">19、电渣焊焊缝的超声波探应在正火后进行。(对)</p>
+<p id="41">21、埋弧焊是利用电弧作为热源的焊接方法，作业时电弧不外露。(对)</p>
+<p id="42">22、焊工登高作业时如遇五级大风时应停止作业。((×)</p>
+<p id="43">26、拔打急救电话是120。(对)</p>
+<p id="44">27、液化石油气瓶充灌过满，受热时瓶内压力会剧增。(对)</p>
+<p id="45">28、气割的最大优点是设备简单，使用灵活。(对)</p>
+<p id="46">29、开坡口通常是控制余高和调整焊缝熔合比最好的方法。(对)</p>
+<p id="47">30、交流弧焊机目前应用最广泛的是“动铁式”交流焊机。(对)</p>
+<p id="48">1、禁止焊接电缆与油脂等易燃物料接触。(对)</p>
+<p id="49">6、切割金属材料时如其导热性很高时，仍可切割。（×)</p>
+<p id="50">9、焊缝成形系数用字母H来代。(×)</p>
+<p id="51">12、三级动火须由部门负责人批准。(对)</p>
+<p id="52">13、交流焊机的工作电压为60V。(×)</p>
+<p id="53">19、埋弧自动焊与焊条件电弧焊相比，对气孔敏感性较小。(对)</p>
+<p id="54">21、氧气不能燃烧，但能助燃。(对)</p>
+<p id="55">25、焊接时，焊接电弧不宜太长，一般电弧长度略超过焊条直径。(×)</p>
+<p id="56">26、建筑用钢多采用的是碳素结构钢。(对)</p>
+<p id="57">27、《安全生产法》规定了从业人员的五项权利，却只有四项义务，因此说权利与义务是不对等的。(×)</p>
+<p id="58">4、碰击法和划擦法是焊条电弧焊最常用的两种引弧方法。（×）</p>
+<p id="59">6、电焊机二次端与焊件不应同时存在接地或接零装置。（×）</p>
+<p id="60">14、进入电渣焊过程后，电弧要熄灭。(对)</p>
+<p id="61">15、焊接有色金属时不需要焊粉，可直接施焊。(×)</p>
+<p id="62">21、发现有人触电时，应立即断开电源开关或拔出插头。(对)</p>
+<p id="63">24、高频焊一般不用焊剂。(对)</p>
+<p id="64">27、焊缝表面与母材的交界处称之为焊趾。((对)</p>
+<p id="65">29、在焊接作业区，严禁直视电弧。(对)</p>
+<p id="66">1.焊接机载机体必须使用单独导线接地，接地电阻不得大于(A)Ω。</p>
+A.4  B.10  C.15   D.20
+<p id="67">2.氩弧焊工的工作服应为（A）服装。</p>
+A.毛料或皮革  B.布料或皮革  C.毛料或人造革  D.马料或皮革
+<p id="68">3.劳动法规定：用人单位对从事有职业危害作业的劳动者，应当定期进行（C）检查。</p>
+A.学习  B.技术  C.健康   D.视力
+
+
+	</div>
+
+	<script>
+		var searchResults = null;  // 搜索结果，数组
+		var resultNum = 0;  // 锚点定位
+		var resultLength = 0;  // 搜索结果总数
+		var tagResultNum = document.getElementById('result-num');
+		var tagResultLength = document.getElementById('result-length');
+		var contentBackup = document.getElementById('textvalue').innerHTML;
+
+		location.hash = '';  // 更新锚点
+		// 搜索函数
+		function search() {
+			// 初始化搜索
+			document.getElementById('textvalue').innerHTML = contentBackup;
+			var searchtext = document.getElementById("searchvalue").value;
+			var textvalue = document.getElementById("textvalue").innerHTML;
+			resultNum = 0;
+			resultLength = 0;
+			
+			// 输入字符过滤，转义
+			searchtext = searchtext.replace(/[\~\`\!\@\#\$\%\^\&\*\(\)\_\-\=\+\[\]\{\}\|\\\;\:\'\"\,\<\.\>\/\?]/gm, '');
+			if (searchtext.length == 0) {
+				return;
+			}
+
+			document.getElementById('textvalue').innerHTML = textvalue.replace(new RegExp(searchtext, 'gm'),
+				'<span class="search-result">' + searchtext + '</span>');
+			searchResults = document.getElementsByClassName('search-result');
+
+			resultLength = searchResults.length;
+			for (var i = 0; i < resultLength; i++) {
+				searchResults[i].id = 'search-result-' + i;
+			}
+			locateResult(resultNum);
+			// clearResult(searchResults);
+		}
+		// 定位结果锚点
+		function locateResult(n) {
+			location.hash = '#search-result-' + n;
+			if (n > 0) {
+				document.getElementById('search-result-' + (n - 1)).classList.remove('search-mark');
+			}
+			if (n < resultLength - 1) {
+				document.getElementById('search-result-' + (n + 1)).classList.remove('search-mark');
+			}
+			// 锚点高亮
+			document.querySelector(location.hash).classList.add('search-mark');
+			// 更新数字显示
+			tagResultNum.innerHTML = resultNum + 1,
+			tagResultLength.innerHTML = resultLength;
+		}
+		// 上一个结果
+		function preOne() {
+			locateResult(resultNum > 0 ? --resultNum : resultNum);
+		}
+		// 下一个结果
+		function nextOne() {
+			locateResult(resultNum < resultLength - 1 ? ++resultNum : resultNum);
+		}
+		// 清空搜索记录
+		function clearResult(_searchResults) {
+			_searchResults = document.getElementsByClassName('search-result');
+			for (var i = 0; i < searchResults.length; i++) {
+				_searchResults[i].classList.remove('search-result');
+			}
+		}
+	</script>
+
+</body>
+
+</html>
