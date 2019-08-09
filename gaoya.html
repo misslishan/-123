@@ -1,3 +1,47 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>高压题库</title>
+	<style>
+		.search-box {
+			position: fixed;
+			top: 1rem;
+			right: 1rem;
+			padding: .5rem;
+			background: #ddd;
+			opacity: .8;
+		}
+		.search-result {
+			color: red;
+		}
+		.search-mark {
+			background: yellow;
+		}
+		#textvalue {
+			margin-top: 4rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="search-box">
+		<input type="text" id="searchvalue" placeholder="输入关键词" autofocus />
+		<input type="button" onclick="search()" value="搜索" />
+		<input type="button" value="上一个" onclick="preOne()" />
+		<input type="button" value="下一个" onclick="nextOne()" />
+		第
+		<span id="result-num"></span>
+		/
+		<span id="result-length"></span>
+		个
+	</div>
+	<div cols="100" rows="10" id="textvalue">
+		<p id="100000">高压题库</p> 
 <p id="1">【判断题】人体触电方式有直接接触触电、间接接触触电。()</p> 
 <p id="2">答案：对</p>
 <p id="3">【判断题】钢绞线常用作架空地线、接地引下线及杆塔的拉线。()</p> 
