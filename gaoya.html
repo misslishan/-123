@@ -2298,4 +2298,75 @@ A.一般防护安全用具
 B.   辅助安全用具     
 C.  绝缘安全用具 
 【【答案：B 】】               
+	</div>
 
+	<script>
+		var searchResults = null;  // 搜索结果，数组
+		var resultNum = 0;  // 锚点定位
+		var resultLength = 0;  // 搜索结果总数
+		var tagResultNum = document.getElementById('result-num');
+		var tagResultLength = document.getElementById('result-length');
+		var contentBackup = document.getElementById('textvalue').innerHTML;
+
+		location.hash = '';  // 更新锚点
+		// 搜索函数
+		function search() {
+			// 初始化搜索
+			document.getElementById('textvalue').innerHTML = contentBackup;
+			var searchtext = document.getElementById("searchvalue").value;
+			var textvalue = document.getElementById("textvalue").innerHTML;
+			resultNum = 0;
+			resultLength = 0;
+			
+			// 输入字符过滤，转义
+			searchtext = searchtext.replace(/[\~\`\!\@\#\$\%\^\&\*\(\)\_\-\=\+\[\]\{\}\|\\\;\:\'\"\,\<\.\>\/\?]/gm, '');
+			if (searchtext.length == 0) {
+				return;
+			}
+
+			document.getElementById('textvalue').innerHTML = textvalue.replace(new RegExp(searchtext, 'gm'),
+				'<span class="search-result">' + searchtext + '</span>');
+			searchResults = document.getElementsByClassName('search-result');
+
+			resultLength = searchResults.length;
+			for (var i = 0; i < resultLength; i++) {
+				searchResults[i].id = 'search-result-' + i;
+			}
+			locateResult(resultNum);
+			// clearResult(searchResults);
+		}
+		// 定位结果锚点
+		function locateResult(n) {
+			location.hash = '#search-result-' + n;
+			if (n > 0) {
+				document.getElementById('search-result-' + (n - 1)).classList.remove('search-mark');
+			}
+			if (n < resultLength - 1) {
+				document.getElementById('search-result-' + (n + 1)).classList.remove('search-mark');
+			}
+			// 锚点高亮
+			document.querySelector(location.hash).classList.add('search-mark');
+			// 更新数字显示
+			tagResultNum.innerHTML = resultNum + 1,
+			tagResultLength.innerHTML = resultLength;
+		}
+		// 上一个结果
+		function preOne() {
+			locateResult(resultNum > 0 ? --resultNum : resultNum);
+		}
+		// 下一个结果
+		function nextOne() {
+			locateResult(resultNum < resultLength - 1 ? ++resultNum : resultNum);
+		}
+		// 清空搜索记录
+		function clearResult(_searchResults) {
+			_searchResults = document.getElementsByClassName('search-result');
+			for (var i = 0; i < searchResults.length; i++) {
+				_searchResults[i].classList.remove('search-result');
+			}
+		}
+	</script>
+
+</body>
+
+</html>
